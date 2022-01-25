@@ -14,5 +14,6 @@
       </Label>
       <Button fx:id="logoutBtn" layoutX="635.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
       <Button fx:id="profilBtn" layoutX="539.0" layoutY="19.0" mnemonicParsing="false" onAction="#openProfil" prefHeight="25.0" prefWidth="54.0" text="Profil" />
+      <Button fx:id="verkaufBtn" layoutX="594.0" layoutY="113.0" mnemonicParsing="false" onAction="#openVerkauf" prefHeight="25.0" prefWidth="136.0" text="Produkte verkaufen" />
    </children>
 </AnchorPane>

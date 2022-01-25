@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="407.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ePlattform.Client.produktverkauf.PVController">
+   <children>
+      <Label layoutX="88.0" layoutY="49.0" text="Name" />
+      <Label layoutX="91.0" layoutY="112.0" text="Preis" />
+      <Label layoutX="78.0" layoutY="161.0" text="Beschreibung" />
+      <TextField fx:id="nameTf" layoutX="157.0" layoutY="37.0" />
+      <TextField fx:id="beschreibungTf" layoutX="189.0" layoutY="166.0" />
+      <TextField fx:id="preisTf" layoutX="157.0" layoutY="108.0" />
+      <Button layoutX="62.0" layoutY="269.0" mnemonicParsing="false" onAction="#uploadProdukt" prefHeight="25.0" prefWidth="283.0" text="Produkt hochladen" />
+   </children>
+</AnchorPane>

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import org.hibernate.jpa.QueryHints;
@@ -27,10 +28,13 @@ public class NutzerRepositoryImpl {
 				.setHint(QueryHints.HINT_PASS_DISTINCT_THROUGH, false).getSingleResult();
 		
 		jpql = "SELECT DISTINCT n from Nutzer n JOIN FETCH n.angeseheneProdukte WHERE n.idNutzer =: idNutzer";
-		nutzer = em.createQuery(jpql, Nutzer.class).setParameter("idNutzer", nutzer.getIdNutzer()).
-				setHint(QueryHints.HINT_PASS_DISTINCT_THROUGH, false).getSingleResult();
-		
-		return nutzer;
+		try {
+			nutzer = em.createQuery(jpql, Nutzer.class).setParameter("idNutzer", nutzer.getIdNutzer()).
+					setHint(QueryHints.HINT_PASS_DISTINCT_THROUGH, false).getSingleResult();
+		}finally {
+			return nutzer;
+		}
+
 	}
 	
 	

@@ -1,5 +1,7 @@
 package ePlattform.server.domainObjects;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +20,18 @@ public class Produkt {
 	
 	@Id @GeneratedValue
 	private int produktId;
+	@Expose
 	private String produktname;
+	@Expose
 	private String produktbeschreibung;
+	@Expose
 	private double preis;
 	private double angebotspreis;
 	private String bild;
 	private String beschreibung;
 	private String kategorie;
-	
+
+	@Expose
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Nutzer anbieter;
 	

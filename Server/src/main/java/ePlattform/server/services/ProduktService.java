@@ -30,14 +30,12 @@ public class ProduktService {
 	
 // Rückgabewert bearbeiten
 	@Transactional
-	public List<Produkt> uploadProdukt(List<Produkt> produkte, String benutzername) {
+	public void uploadProdukt(List<Produkt> produkte, String benutzername) {
 		GewerbeNutzer nutzer = (GewerbeNutzer) nutzerRepository.findByBenutzername(benutzername);
-		List<Produkt> failedProducts = new ArrayList<>();
 		for(int i = 0; i < produkte.size(); i++) {
 			Produkt produkt = produkte.get(i);
 			nutzer.produktAnbieten(produkt);
 		}
-		return failedProducts;
 	}
 	
 	@Transactional

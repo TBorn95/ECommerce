@@ -99,8 +99,8 @@ public class NutzerService {
 	@Transactional
 	public Nutzer loginNutzer(String benutzerName, String passwort) {
 		//Nutzer loggingNutzer = nutzerRepository.findByBenutzername(benutzerName);
-		Nutzer loggingNutzer = nutzerRepository.findByBenutzernameFetchedEntity(benutzerName);
-		//Nutzer loggingNutzer = nutzerRepository.findByBenutzernameFetched(benutzerName);
+		//Nutzer loggingNutzer = nutzerRepository.findByBenutzernameFetchedEntity(benutzerName);
+		Nutzer loggingNutzer = nutzerRepository.findByBenutzernameFetched(benutzerName);
 		return (loggingNutzer != null && loggingNutzer.getPasswort().equals(passwort)) ? loggingNutzer : null; 				
 	}
 		

@@ -69,7 +69,7 @@ public class MessageHandler {
 	
 	public JsonObject msgToClient(String status, String content,String keyword) {
 		JsonObject message = new JsonObject();
-		message.addProperty("keyword", "login");
+		message.addProperty("keyword", keyword);
 		message.addProperty("status", status);
 		message.addProperty("content", content);
 		return message;

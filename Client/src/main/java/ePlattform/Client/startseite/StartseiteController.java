@@ -1,5 +1,6 @@
 package ePlattform.Client.startseite;
 
+import ePlattform.Client.produktverkauf.PVController;
 import org.springframework.stereotype.Controller;
 
 import ePlattform.Client.connection.SocketEndpoint;
@@ -17,7 +18,9 @@ import net.rgielen.fxweaver.core.FxmlView;
 public class StartseiteController {
 	
 	@FXML
-	private Button logoutBtn;	
+	private Button logoutBtn;
+	@FXML
+	private Button verkaufBtn;
 	@FXML
 	private Button profilBtn;
 	private FxWeaver weaver;
@@ -38,7 +41,13 @@ public class StartseiteController {
 		WindowOpener.openWindow(LoginController.class);
 		socket.messageToServer("logout", null, LoggedInUser.getNutzer().getBenutzername());
 	}
-	
+
+	@FXML
+	public void openVerkauf(){
+		Stage currentStage = (Stage) logoutBtn.getScene().getWindow();
+		currentStage.close();
+		WindowOpener.openWindow(PVController.class);
+	}
 	
 	@FXML
 	public void openProfil() {
